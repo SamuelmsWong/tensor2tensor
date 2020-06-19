@@ -47,18 +47,6 @@ class DatasetSplit(object):
   TRAIN = tf.estimator.ModeKeys.TRAIN
   EVAL = tf.estimator.ModeKeys.EVAL
   TEST = "test"
-  # EXTRA_ADD_OR_SUB_BIG = "extra_add_or_sub_big"
-  # EXTRA_ADD_SUB_MULTIPLE_LONGER = "extra_add_sub_multiple_longer"
-  # EXTRA_DIV_BIG = "extra_div_big"
-  # EXTRA_MIXED_LONGER = "extra_mixed_longer"
-  # EXTRA_MUL_BIG = "extra_mul_big"
-  # EXTRA_MUL_DIV_MULTIPLE_LONGER = "extra_mul_div_multiple_longer"
-  # INTER_ADD_OR_SUB = "inter_add_or_sub"
-  # INTER_ADD_SUB_MULTIPLE = "inter_add_sub_multiple"
-  # INTER_DIV = "inter_div"
-  # INTER_MIXED = "inter_mixed"
-  # INTER_MUL = "inter_mul"
-  # INTER_MUL_DIV_MULTIPLE = "inter_mul_div_multiple"
 
 
 class SpaceID(object):
