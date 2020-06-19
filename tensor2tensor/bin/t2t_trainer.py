@@ -145,7 +145,6 @@ flags.DEFINE_bool("gpu_automatic_mixed_precision", False,
                   "(via graph rewrite and dynamic loss scaling).")
 
 
-
 def set_hparams_from_args(args):
   """Set hparams overrides from unparsed args list."""
   if not args:
@@ -155,7 +154,7 @@ def set_hparams_from_args(args):
   tf.logging.info("Found unparsed command-line arguments. Checking if any "
                   "start with %s and interpreting those as hparams "
                   "settings.", hp_prefix)
-
+  print("left over args: ", args)
   pairs = []
   i = 0
   while i < len(args):
@@ -171,6 +170,7 @@ def set_hparams_from_args(args):
   if FLAGS.hparams:
     as_hparams = "," + as_hparams
   FLAGS.hparams += as_hparams
+  tf.logging.info("Detected hyperparameters: " + FLAGS.hparams)
 
 
 def create_hparams():
@@ -400,6 +400,8 @@ def main(argv):
       key=mlperf_log.RUN_SET_RANDOM_SEED, value=FLAGS.random_seed,
       hparams=hparams)
   trainer_lib.set_random_seed(FLAGS.random_seed)
+  for flag, val in FLAGS.__flags.items():
+    print(flag, ": ", val.value)  
 
   if FLAGS.cloud_mlengine:
     cloud_mlengine.launch()
