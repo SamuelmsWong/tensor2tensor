@@ -1,6 +1,7 @@
 #!/bin/bash
 
 
+
 export TPU_IP_ADDRESS=10.218.218.146
 export XRT_TPU_CONFIG="tpu_worker;0;$TPU_IP_ADDRESS:8470"
 export PROBLEM=algorithmic_math_deepmind_all
@@ -19,6 +20,22 @@ export ALPHA=0.6
 export DECODE_FILE=$HOME/test_file.txt
 export DECODE_OUTPUT=$HOME/output.txt
 export DATA_SHARD=$DATA_DIR/algorithmic_math_deepmind_all-train-00000-of-00128
+
+echo $PROBLEM
+echo $MODEL
+echo $HPARAMS_SET
+echo $TPU_NAME
+echo $STORAGE_BUCKET
+echo $MODEL_TAG
+echo $MODEL_TAG
+echo $DATA_DIR
+echo $TMP_DIR
+echo $TRAIN_DIR
+echo $BEAM_SIZE
+echo $ALPHA
+echo $DECODE_FILE
+echo $DECODE_OUTPUT
+
 
 
 t2t-eval \
@@ -42,22 +59,6 @@ t2t-eval \
 #   --decode_to_file=$DECODE_OUTPUT
 
 #   --decode_from_file=$DECODE_FILE \
-
-# echo $PROBLEM
-# echo $MODEL
-# echo $HPARAMS_SET
-# echo $TPU_NAME
-# echo $STORAGE_BUCKET
-# echo $MODEL_TAG
-# echo $MODEL_TAG
-# echo $DATA_DIR
-# echo $TMP_DIR
-# echo $TRAIN_DIR
-# echo $BEAM_SIZE
-# echo $ALPHA
-# echo $DECODE_FILE
-# echo $DECODE_OUTPUT
-
 
 
 # '\n\n                                   ._ o o\n                                   \\_`-)|_\n                                ,""       \\ \n                              ,"  ## |   ಠ ಠ. \n                            ," ##   ,-\\__    `.\n                          ,"       /     `--._;)\n                        ,"     ## /\n                      ,"   ##    /\n\n\n'
